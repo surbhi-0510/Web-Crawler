@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.App {
+  text-align: center;
+}
+
+html {
+  font-size: 62.5%;
+  /* 1 rem = 10px */
+}
+
+/* NAVBAR */
+.mainNav {
+  border: 1px solid green;
+  background-color: rgb(221, 221, 124);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5.5rem;
+  
+}
+.mainNavLeft{
+  display: flex;
+  justify-content: baseline;
+  gap:20px;
+}
+.mainNavLeft img{
+  border-radius: 50%;
+  max-height: 10rem;
+}
+.mainNavLeft h1{
+  font-family: 'Abril Fatface', cursive;
+  font-size:50px;
+  padding-top: 20px;
+  color: rgb(129, 129, 21);
+}
+.mainNavLeft h1:hover{
+  color: rgb(152, 152, 39);
+}
+.mainNavRight{
+  font-size:40px;
+  cursor: pointer;
+  color: rgb(129, 129, 21);
+  font-family: 'Chakra Petch', sans-serif;
+}
+.mainNavRight:hover{
+  color: rgb(152, 152, 39);
+}
+
+/* MAIN DIV */
+.mainArea{
+  padding-top: 20px;
+  min-height:100vh;
+  width:100%;
+  background-image: url("http://www.distripress.net/wp-content/uploads/2018/03/Featured-Image6.jpg");
+}
+
+.searchDiv {
+  width: 100%;
+  max-width: 40rem;
+  background-color: rgba(225, 211, 211, 0.2);
+  box-shadow: rgba(152, 189, 20, 0.908) 0px 3px 8px;
+  margin: auto;
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rem;
+  padding: 1rem;
+}
+
+.searchDiv > input {
+  font-family: 'Chakra Petch', sans-serif;
+  background-color: transparent;
+  border: 0;
+  flex: 1;
+  outline: none;
+  padding: 1rem;
+  font-size: 1.8rem;
+  color: rgb(104, 15, 15);
+}
+
+::placeholder {
+  color: rgb(129, 129, 21);
+  font-size: 2rem;
+  font-weight: bold;
+}
+.searchDiv > button {
+  border: 0;
+  background-color: transparent;
+  font-family: 'Chakra Petch', sans-serif;
+}
+.searchDiv > button > i {
+  cursor: pointer;
+  font-size: 1.7rem;
+  padding-right: 1rem;
+}
+
+.cardComponent,.savedCard {
+  background-color: white;
+  box-shadow: rgba(198, 252, 3, 0.24) 0px 3px 8px;
+  margin: auto;
+  margin-top: 5rem;
+  width: 40%;
+  display: flex;
+  gap:20px;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+.card-content {
+  /* font-size: large; */
+  font-size: 20px;
+  text-align: left;
+  cursor:context-menu;
+  color: rgb(129, 129, 21);
+  font-family: 'Neuton', serif;
+}
+.card-img img{
+  width: 200px;
+  height: 150px;
+}
+.card-content a{
+  color:rgb(227, 213, 63);
+  font-family: 'Acme', sans-serif;
+}
+.card-content a:hover{
+  color: rgb(182, 182, 130);
+}
+.save-button,.delete-button{
+  cursor: pointer;
+  border: none;
+  background-color:rgb(221, 221, 124); 
+   color: rgb(129, 129, 21);
+  height: 40px;
+  width: 90px;
+  border-radius: 30px;
+  font-family: 'Chakra Petch', sans-serif;
+}
+.save-button:hover,.delete-button:hover{
+  cursor: pointer;
+  background-color:rgb(146, 146, 26);
+  color:palegoldenrod
+}
