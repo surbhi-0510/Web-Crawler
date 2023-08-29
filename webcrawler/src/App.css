@@ -11,13 +11,13 @@
 
 html {
   font-size: 62.5%;
-  /* 1 rem = 10px */
 }
 
 /* NAVBAR */
 .mainNav {
-  border: 1px solid green;
-  background-color: rgb(221, 221, 124);
+  border: 1px solid red;
+  /* background-color: rgb(221, 221, 124); */
+  background-color: rgb(209, 209, 142);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -27,41 +27,39 @@ html {
   align-items: center;
   justify-content: space-between;
   padding: 5.5rem;
-  
 }
-.mainNavLeft{
+.mainNavLeft {
   display: flex;
   justify-content: baseline;
-  gap:20px;
+  gap: 20px;
 }
-.mainNavLeft img{
+.mainNavLeft img {
   border-radius: 50%;
   max-height: 10rem;
 }
-.mainNavLeft h1{
-  font-family: 'Abril Fatface', cursive;
-  font-size:50px;
+.mainNavLeft h1 {
+  font-family: "Abril Fatface", cursive;
+  font-size: 50px;
   padding-top: 20px;
   color: rgb(129, 129, 21);
 }
-.mainNavLeft h1:hover{
+.mainNavLeft h1:hover {
   color: rgb(152, 152, 39);
 }
-.mainNavRight{
-  font-size:40px;
+.mainNavRight {
+  font-size: 40px;
   cursor: pointer;
   color: rgb(129, 129, 21);
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: "Chakra Petch", sans-serif;
 }
-.mainNavRight:hover{
+.mainNavRight:hover {
   color: rgb(152, 152, 39);
 }
-
 /* MAIN DIV */
-.mainArea{
+.mainArea {
   padding-top: 20px;
-  min-height:100vh;
-  width:100%;
+  min-height: 100vh;
+  width: 100%;
   background-image: url("http://www.distripress.net/wp-content/uploads/2018/03/Featured-Image6.jpg");
 }
 
@@ -80,7 +78,7 @@ html {
 }
 
 .searchDiv > input {
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: "Chakra Petch", sans-serif;
   background-color: transparent;
   border: 0;
   flex: 1;
@@ -98,7 +96,7 @@ html {
 .searchDiv > button {
   border: 0;
   background-color: transparent;
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: "Chakra Petch", sans-serif;
 }
 .searchDiv > button > i {
   cursor: pointer;
@@ -106,14 +104,15 @@ html {
   padding-right: 1rem;
 }
 
-.cardComponent,.savedCard {
+.cardComponent,
+.savedCard {
   background-color: white;
   box-shadow: rgba(198, 252, 3, 0.24) 0px 3px 8px;
   margin: auto;
   margin-top: 5rem;
   width: 40%;
   display: flex;
-  gap:20px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   padding: 2rem;
@@ -123,33 +122,70 @@ html {
   /* font-size: large; */
   font-size: 20px;
   text-align: left;
-  cursor:context-menu;
+  cursor: context-menu;
   color: rgb(129, 129, 21);
-  font-family: 'Neuton', serif;
+  font-family: "Neuton", serif;
 }
-.card-img img{
+.card-img img {
   width: 200px;
   height: 150px;
 }
-.card-content a{
-  color:rgb(227, 213, 63);
-  font-family: 'Acme', sans-serif;
+.card-content a {
+  color: rgb(227, 213, 63);
+  font-family: "Acme", sans-serif;
 }
-.card-content a:hover{
+.card-content a:hover {
   color: rgb(182, 182, 130);
 }
-.save-button,.delete-button{
+.card-content p:hover {
+  padding-left: 5px;
+  transform: scale(1.1);
+}
+
+.save-button,
+.delete-button {
   cursor: pointer;
   border: none;
-  background-color:rgb(221, 221, 124); 
-   color: rgb(129, 129, 21);
+  background-color: rgb(221, 221, 124);
+  color: rgb(129, 129, 21);
   height: 40px;
   width: 90px;
   border-radius: 30px;
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: "Chakra Petch", sans-serif;
 }
-.save-button:hover,.delete-button:hover{
+.save-button:hover,
+.delete-button:hover {
   cursor: pointer;
-  background-color:rgb(146, 146, 26);
-  color:palegoldenrod
+  background-color: rgb(146, 146, 26);
+  color: palegoldenrod;
+}
+
+@media screen and (max-width: 480px) {
+  .mainNav {
+    padding-left: 30px;
+    border: 1px solid green;
+    height: 20rem;
+    gap: 20px;
+  }
+  .mainNavLeft img {
+    padding-top: 30px;
+  }
+  .mainNavLeft h1 {
+    font-size: 40px;
+  }
+  .mainNavRight {
+    font-size: 30px;
+  }
+  .cardComponent,
+  .savedCard {
+    width: 80%;
+    display: flex;
+    gap: 10px;
+    padding: 2px 20px 2px 20px;
+  }
+  .card-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+  }
 }

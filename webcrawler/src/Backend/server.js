@@ -17,7 +17,7 @@ async function createNews(ele) {
     });
     const alreadyExistNews = await News.find({ tagLine: ele.title });
     if (!alreadyExistNews.length) {
-      const result = await newsDetail.save();
+      await newsDetail.save();
     }
   } catch (err) {
     console.log(`ERROR(createNews) : ${err}`);
@@ -51,7 +51,7 @@ app.get("/news", async (req, res) => {
           .html()
           .split(" ")
           .filter((ele) => {
-            return ele.slice(0, 8) == "data-src";
+            return ele.slice(0, 8) === "data-src";
           });
 
         return {
@@ -68,7 +68,7 @@ app.get("/news", async (req, res) => {
     for (let i = 0; i < final_array.length; i++) {
       createNews(final_array[i]);
     }
-    // res.send("SENDING DATA TO MONGODB USING CREATENEWS FUNCTION");
+    res.send("SENDING DATA TO MONGODB USING CREATENEWS FUNCTION");
   });
 });
 
@@ -88,12 +88,18 @@ app.get("/viewsavednews", async (req, res) => {
 });
 
 app.get("/searchnews", async (req, res) => {
-  const search = req.query["q"];
-  // SEARCHING NEWS FROM OUR DATABASE
-  const viewSearchNews = await News.find({
-    tagLine: { $regex: search, $options: "i" },
-  });
-  res.send(viewSearchNews);
+  try {
+    const search = req.query["q"];
+    // console.log("searchnews", search, search === "");
+    // SEARCHING NEWS FROM OUR DATABASE
+    const viewSearchNews = await News.find({
+      tagLine: { $regex: search, $options: "i" },
+    });
+    res.send(viewSearchNews);
+  } catch (err) {
+    console.log(err);
+    res.status(404).send("ERROR in /searchnews");
+  }
 });
 
 app.post("/savednews", async (req, res) => {
@@ -110,7 +116,7 @@ app.post("/savednews", async (req, res) => {
 
 app.delete("/deletesavednews", async (req, res) => {
   // DELETING SAVED NEWS FROM MONGODB
-  const updateNews = await collection.findByIdAndDelete(req.body._id);
+  await collection.findByIdAndDelete(req.body._id);
 });
 
 const PORT = 8000;

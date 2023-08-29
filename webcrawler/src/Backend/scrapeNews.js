@@ -111,13 +111,13 @@ app.get("/news", async (req, res) => {
   });
 });
 
-app.get("/getnews", (req, res) => {
-  News.find()
-    .select("-__v")
-    .limit(173)
-    .then((news) => res.json(news))
-    .catch((err) => res.json(err));
-});
+// app.get("/getnews", (req, res) => {
+//   News.find()
+//     .select("-__v")
+//     .limit(173)
+//     .then((news) => res.json(news))
+//     .catch((err) => res.json(err));
+// });
 
 app.get("/viewsavednews", async (req, res) => {
   const viewSavedNews = await collection.find();
