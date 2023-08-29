@@ -111,12 +111,14 @@ app.post("/savednews", async (req, res) => {
     tagLine: saved_news.tagLine,
     url: saved_news.url,
   };
-  await collection.insertMany(data);
+  const savedNews = await collection.insertMany(data);
+  res.send(savedNews);
 });
 
 app.delete("/deletesavednews", async (req, res) => {
   // DELETING SAVED NEWS FROM MONGODB
-  await collection.findByIdAndDelete(req.body._id);
+  const result = await collection.findByIdAndDelete(req.body._id);
+  res.send(result);
 });
 
 const PORT = 8000;

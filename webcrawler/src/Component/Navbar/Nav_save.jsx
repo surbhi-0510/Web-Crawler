@@ -6,6 +6,10 @@ import axios from "axios";
 const NavSave = () => {
   const [savedNews, setSavedNews] = useState([]);
 
+  useEffect(() => {
+    viewSavedNews();
+  }, []);
+
   function viewSavedNews() {
     // FETCHING SAVED NEWS
     axios
@@ -21,15 +25,11 @@ const NavSave = () => {
     axios
       .delete("http://localhost:8000/deletesavednews", { data: { _id: _id } })
       .then((news) => {
-        console.log('Delete news : ',news)
+        // console.log("Delete news : ", news);
+        viewSavedNews();
       })
-      .catch((err) => console.log(err));
-
+      .catch((err) => console.log("Error in Delete news : ", err));
   }
-
-  useEffect(() => {
-    viewSavedNews();
-  }, []);
 
   return (
     <div className="mainArea">
